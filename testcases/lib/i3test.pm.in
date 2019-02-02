@@ -127,7 +127,7 @@ END {
         exit_gracefully($i3_pid, "/tmp/nested-$ENV{DISPLAY}");
 
     } else {
-        kill(-9, $i3_pid)
+        kill('TERM', $i3_pid)
             or $tester->BAIL_OUT("could not kill i3: $!");
 
         waitpid $i3_pid, 0;
